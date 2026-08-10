@@ -281,7 +281,7 @@ async function main() {
         Logger.info(`Start list: expirationTime: ${expirationTime}, tokenId: ${tokenId}, current_time: ${current_time}, current_index: ${current_index}`);
         console.log(expirationTime);
         const _combo = openseaSDKs[sdkIdx % openseaSDKs.length];
-        Logger.info();
+        Logger.info(`INFURA实际=${_combo.infuraKey.slice(0,8)} API实际=${_combo.apiKey.slice(0,8)} idx=${sdkIdx % openseaSDKs.length}`);
         sdkIdx++;
         const listing = await withTimeout(_combo.sdk.createListing({
             asset: {
